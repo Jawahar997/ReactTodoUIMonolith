@@ -24,3 +24,11 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'npm run build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(SystemDefaultWorkingDirectory)/build/'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(SystemDefaultWorkingDirectory)/build.zip'
+    replaceExistingArchive: true
